@@ -9,6 +9,7 @@ public class TextWordsCounter {
 
     public static void main(String[] args) throws IOException {
 
+        System.out.println(new StringBuilder(new String("abcd")).reverse());
         Map<String, Long>
                 collect =
                 Files.lines(Paths.get("/root/work/testforwordscounter.txt"))
@@ -17,6 +18,7 @@ public class TextWordsCounter {
                      .flatMap(stringStream -> stringStream)
                      .collect(Collectors.groupingBy(s -> s, Collectors.counting()));
         mapPrinter(collect);
+
     }
 
     private static void mapPrinter(Map<String, Long> map) {
